@@ -1,0 +1,117 @@
+// sass --watch src/css
+// sass --watch src/css --style compressed
+
+@import "modules/_functions.sass"
+@import "modules/_mixins.sass"
+@import "modules/_colors.sass"
+
+//////////////////////////////////////////////
+// Global Vars
+//////////////////////////////////////////////
+
+// Typography
+$fs-base: 16px
+$line-height: 1.6
+$blh: round($fs-base * $line-height)
+
+$font-text: "'Open Sans', sans-serif"
+$font-title: "'Raleway', sans-serif"
+$title-trans: "none"
+$title-weight: 300
+
+// Font Scale Factor
+// 1.067: Minor Second
+// 1.125: Major Second
+// 1.200: Minor Third
+// 1.250: Major Third
+// 1.333: Perfect Fourth
+// 1.414: Augmented Fourth
+// 1.500: Perfect Fifth
+// 1.618: Golden Ratio
+
+$scale-factor: 1.333
+$xs-scale-factor: 1.125
+
+// media breakpoints (min)
+$media-min-xs: "screen and (min-width: 576px)"
+$media-min-sm: "screen and (min-width: 768px)"
+$media-min-md: "screen and (min-width: 992px)"
+$media-min-lg: "screen and (min-width: 1200px)"
+$media-min-xl: "screen and (min-width: 1400px)"
+
+// media breakpoints (max)
+$media-max-xs: "screen and (max-width: 575px)"
+$media-max-sm: "screen and (max-width: 767px)"
+$media-max-md: "screen and (max-width: 991px)"
+$media-max-lg: "screen and (max-width: 1199px)"
+$media-max-xl: "screen and (max-width: 1399px)"
+
+@import "modules/_reset.sass"
+
+//////////////////////////////////////////////
+// Component: Non-BEM - Temp
+//////////////////////////////////////////////
+
+
+.app
+  min-height: 100vh
+  background: #eee
+  &__header
+    background: #222
+    padding: $blh
+    color: #fff
+  &__title
+    color: #fff
+    margin: 0
+  &__main
+    background: #fff
+    padding: $blh
+    color: #666
+  &__footer
+    padding: $blh
+    color: #999
+
+.sheet
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr
+  grid-template-areas: "abilities saves stats health"
+  grid-gap: $blh/2
+  @media #{$media-max-md}
+    grid-template-areas: "abilities saves" "stats health"
+
+.abilities
+  &__list
+    padding: 0
+  &__item
+    display: block
+    padding: $blh/4 $blh/2
+    border: solid 1px #ddd
+    &--head
+      background: $clr-alt
+      color: #fff
+      border-color: $clr-main
+  // grid
+  grid-area: abilities
+  &__item
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+
+.saves
+  grid-area: saves
+
+.stats
+  grid-area: stats
+
+.health
+  grid-area: health
+
+//////////////////////////////////////////////
+// Component: NEW
+//////////////////////////////////////////////
+
+// remove all below this line
+
+.example
+  &__eatdicks
+    display: block

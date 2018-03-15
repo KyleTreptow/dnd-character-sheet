@@ -1,0 +1,102 @@
+//////////////////////////////////////////////
+// Reset
+//////////////////////////////////////////////
+
+*,
+*:before,
+*:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+// Baseline for HTML & Body
+html,
+body
+  width: 100%
+  // overflow: hidden
+
+html
+  font-size: $fs-base
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+body
+  font-family: #{$font-text}
+  margin: 0
+  font-size: $fs-base
+  line-height: $blh
+  color: $clr-text
+
+// Headlines
+h1, h2, h3, h4, h5
+  font-family: #{$font-title}
+  font-weight: $title-weight
+  text-transform: #{$title-trans}
+  font-style: inherit
+  line-height: $blh
+  margin-top: 0
+  margin-bottom: $blh
+  color: $clr-title
+  small
+    font-family: #{$font-text}
+    display: block
+    margin-top: $blh / 4
+
+h1,
+.fs-h1
+  @media #{$media-min-sm}
+    font-size: $fs-base * pow($scale-factor, 3)
+    line-height: $blh * 2
+  @media #{$media-max-sm}
+    font-size: $fs-base * pow($xs-scale-factor, 3)
+
+h2,
+.fs-h2
+  @media #{$media-min-sm}
+    font-size: $fs-base * pow($scale-factor, 2)
+    line-height: $blh * 1.5
+  @media #{$media-max-sm}
+    font-size: $fs-base * pow($xs-scale-factor, 2)
+
+h3,
+.fs-h3
+  @media #{$media-min-sm}
+    font-size: $fs-base * $scale-factor
+    line-height: $blh * 1.5
+  @media #{$media-max-sm}
+    font-size: $fs-base * $xs-scale-factor
+
+h4,
+.fs-h4,
+.fs-base
+  font-size: $fs-base
+
+h5,
+small,
+button,
+.fs-h5,
+.fs-small
+  @media #{$media-min-sm}
+    font-size: $fs-base / $scale-factor
+  @media #{$media-max-sm}
+    font-size: $fs-base / $xs-scale-factor
+
+// Normalize with new Baseline Values
+p, ul, ol, pre, table, blockquote
+  margin-top: 0
+  margin-bottom: $blh
+
+ul ul, ol ol, ul ol, ol ul
+  margin-top: 0
+  margin-bottom: 0
+
+b, strong, em, small, code
+  line-height: inherit
+
+a
+  color: $clr-hlt
+
+figure
+  margin: 0
+  img
+    max-width: 100%
